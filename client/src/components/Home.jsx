@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react'
-import { CardActionArea, Avatar, paginationClasses } from '@mui/material';
+import { CardActionArea, Avatar } from '@mui/material';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Loading from './Loading';

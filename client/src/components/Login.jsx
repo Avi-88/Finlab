@@ -41,7 +41,7 @@ const Login = () => {
 
     const handleRegister = async()=>{
         try {
-            const res = await axios.post('auth/register', {})
+             await axios.post('auth/register', {})
         } catch (error) {
             
         }

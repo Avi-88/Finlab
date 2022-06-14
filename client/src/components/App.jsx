@@ -15,7 +15,7 @@ function App() {
   const [coinTrending, setCoinTrending] = useState([{item:{name:"Bitcoin", score:"0"}}, {item:{name:"Etherium", score:"0"}}, {item:{name:"Dogecoin", score:"0"}},{item:{name:"Bitcoin", score:"0"}}, {item:{name:"Etherium", score:"0"}}, {item:{name:"Dogecoin", score:"0"}}, {item:{name:"Dogebonk", score:"0"}}])
   const [mainData, setMainData] = useState([]); 
   const [isLoading, setLoading] = useState(true);
-  const {user , isLoggedIn} = useContext(AuthContext);
+  const { isLoggedIn} = useContext(AuthContext);
 
   useEffect(() => {
     axios.get('https://api.coingecko.com/api/v3/search/trending')

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CardActionArea, Avatar } from '@mui/material';
+import {  Avatar } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import IconButton from '@mui/material/IconButton';
 import { Line } from 'react-chartjs-2';
