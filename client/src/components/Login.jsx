@@ -24,7 +24,7 @@ const Login = () => {
         try {
            dispatch({type:"LOGIN_START"});
             try {
-                const res = await axios.post("auth/login", {email:email.current.value , password: password.current.value})
+                const res = await axios.post("http://finlab-server:8000/api/auth/login", {email:email.current.value , password: password.current.value})
                 if(res.status === 200){
                     navigate('/')
                 };
@@ -41,7 +41,7 @@ const Login = () => {
 
     const handleRegister = async()=>{
         try {
-             await axios.post('auth/register', {})
+             await axios.post('http://finlab-server:8000/api/auth/register', {})
         } catch (error) {
             
         }

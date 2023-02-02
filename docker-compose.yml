@@ -1,0 +1,37 @@
+version: '3'
+services:
+  react-client:
+    build: ./client
+    container_name: finlab-client
+    depends_on: 
+      - node-backend
+    ports:
+      - 3000:3000
+    networks:
+      - finlab-webapp
+  node-backend:
+    build: ./server
+    container_name: finlab-server
+    depends_on: 
+      - mongo-database
+    ports:
+      - 8000:8000
+    networks:
+      - finlab-webapp
+  mongo-database:
+    image: mongo
+    container_name: finlab-database
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+    volumes:
+      - /mongoData:/data/db
+    networks:
+      - finlab-webapp
+
+networks:
+  finlab-webapp:
+    driver: bridge
+    
+
+

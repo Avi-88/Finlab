@@ -47,7 +47,7 @@ useEffect(()=>{
 
 const getCurrentUser = async()=>{
   try {
-    const res = await axios(`users/${user._id}`);
+    const res = await axios(`http://finlab-server:8000/api/users/${user._id}`);
     setCurrentUser(res.data);
     localStorage.setItem("user", JSON.stringify(res.data));
   } catch (error) {
@@ -62,7 +62,7 @@ const getCurrentUser = async()=>{
   const handleAddCoin = async(id) =>{
     if(isLoggedIn){
     try {
-      const res = await axios.put(`users/${id}/addcoin`, {userId: user._id});
+      const res = await axios.put(`http://finlab-server:8000/api/users/${id}/addcoin`, {userId: user._id});
       if(res.status === 200){
       setOpenAlert(true);
       setMsg('Coin added to your Watchlist!');
@@ -85,7 +85,7 @@ const getCurrentUser = async()=>{
   const handleRemoveCoin = async(id) =>{
     if(isLoggedIn){
     try {
-      const res = await axios.put(`users/${id}/removecoin`, {userId: user._id});
+      const res = await axios.put(`http://finlab-server:8000/api/users/${id}/removecoin`, {userId: user._id});
       if(res.status === 200){
         setOpenAlert(true);
         setMsg('Coin removed from your Watchlist!');
