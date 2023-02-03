@@ -19,6 +19,9 @@ mongoose.connect("mongodb://finlab-database/cryptoDB").then(
 app.use(express.json());
 app.use(cors());
 
+app.get("/api/test", (req,res) => {
+    res.status(200).json("Hello from backend!");
+})
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 
